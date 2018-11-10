@@ -1,0 +1,34 @@
+.row
+  .col
+    .card.shadow
+      .card-header.border-0
+        h3.mb-0 = t('.title')
+      .table-responsive
+        table.table.align-items-center.table-flush
+          thead.thead-light
+            tr
+              th scope="col" = t('.index')
+              th scope="col" = t('.company_name')
+              th scope="col" = t('.tax_identification_number')
+              th scope="col" = t('.legal_representative')
+              th scope="col" = t('.phone_number')
+              th scope="col" = t('.created_at')
+              th scope="col" = t('.action')
+          tbody
+            - @access_requests.each do |access_request|
+              tr
+                td
+                  = access_request.id
+                td
+                  = access_request.company_name
+                td
+                  = access_request.tax_identification_number
+                td
+                  = access_request.legal_representative
+                td
+                  = access_request.phone_number
+                td
+                  = access_request.created_at
+                td
+                  = link_to t('.detail'), admin_access_request_path(access_request)
+      = paginate @access_requests

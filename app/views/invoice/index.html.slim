@@ -1,0 +1,14 @@
+= form_for Invoice.new, remote: true do |f|
+  .form-group
+    label.form-control-label = t('place_holder.serial_number')
+    = f.text_field :transaction_id, class: 'form-control', placeholder: "#{t('place_holder.invoice_number')}"
+  .form-group
+    = recaptcha_tags
+  .row
+    .col-md-4.mx-auto
+      = f.submit 'ok', class: 'btn btn-primary btn-lg my-4 btn-full'
+
+
+#invoice-modal.modal.fade tabindex="-1"
+  .modal-dialog.modal-dialog-centered.modal-lg role="document"
+    .modal-content
