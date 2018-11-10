@@ -8,8 +8,6 @@ class Admin::AccessRequestService < Admin::BaseService
 
     company = create_company(user, access_request)
 
-    account = create_account(company)
-
     AccessRequestMailer.accept(
       access_request, user, user.raw_invitation_token, locale
     ).deliver_later
@@ -29,14 +27,5 @@ class Admin::AccessRequestService < Admin::BaseService
     params = request.slice(COMPANY_ATTRIBUTE)
     params['name'] = params.delete('company_name')
     user.create_owner_company(params)
-  end
-
-  def create_account(company)
-    nem_account = Admin::AccountService.generate_account
-    account = company.build_account
-    account.private_key = nem_account.private_key
-    account.public_key = nem_account.public_key
-    account.address = nem_account.address
-    account.save
   end
 end

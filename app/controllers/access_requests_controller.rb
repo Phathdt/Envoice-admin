@@ -21,7 +21,7 @@ class AccessRequestsController < ApplicationController
   end
 
   def update
-    @access_request = AccessRequest.find_by(id: params[:id], token: params['access_request']['token'])
+    @access_request = AccessRequest.find_by(id: params[:id], token: params[:access_request][:token])
 
     if @access_request.update(access_request_params) && @access_request.may_repending?
       @access_request.repending!
@@ -37,7 +37,7 @@ class AccessRequestsController < ApplicationController
   private
 
   def access_request_params
-    params.require(:access_request).permit(:company_name, :legal_representative, :phone_number, :tax_identification_number, :address, :email, :user_id, :business_registration_certificate, :certificate_of_tax_registration, :id_legal_representative_front, :id_legal_representative_back)
+    params.require(:access_request).permit(:company_name, :legal_representative, :phone_number, :tax_identification_number, :address, :email, :user_id, :public_address, :business_registration_certificate, :certificate_of_tax_registration, :id_legal_representative_front, :id_legal_representative_back)
   end
 
   def edit_params

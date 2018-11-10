@@ -27,6 +27,7 @@ vi:
     tax_identification_number: Mã số thuế
     address: Địa chỉ
     email: Email
+    public_address: Địa chỉ tài khoảng blockchain
     business_registration_certificate: Giấy chứng nhận đăng ký  kinh doanh
     certificate_of_tax_registration: Giấy chứng nhận đăng ký thuế
     id_legal_representative_front: CMND người đại diện pháp luật (mặt trước)
