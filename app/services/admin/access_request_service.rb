@@ -1,5 +1,5 @@
 class Admin::AccessRequestService < Admin::BaseService
-  COMPANY_ATTRIBUTE = %i(company_name legal_representative phone_number tax_identification_number address email).freeze
+  COMPANY_ATTRIBUTE = %i(company_name legal_representative phone_number tax_identification_number address email public_address).freeze
 
   def accept(access_request)
     access_request.approve!
@@ -26,6 +26,6 @@ class Admin::AccessRequestService < Admin::BaseService
   def create_company(user, request)
     params = request.slice(COMPANY_ATTRIBUTE)
     params['name'] = params.delete('company_name')
-    user.create_owner_company(params)
+    user.create_company(params)
   end
 end

@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   scope '(:locale)', locale: /en|vi/ do
     devise_for :users, controllers: { passwords: 'user/passwords' }
 
-    resources :access_requests, only: %i(new create success edit update)
+    resources :access_requests, only: %i(new create edit update)
+    get 'access_requests/success', to: 'access_requests#success'
 
     namespace :admin do
       get '/', to: 'dashboards#index'

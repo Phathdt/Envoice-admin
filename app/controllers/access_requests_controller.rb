@@ -10,7 +10,7 @@ class AccessRequestsController < ApplicationController
 
     if @access_request.save
       flash[:success] = t('.created_success')
-      render 'success'
+      redirect_to '/access_requests/success'
     else
       render :new
     end
@@ -28,10 +28,14 @@ class AccessRequestsController < ApplicationController
       @access_request.update(reason: nil, token: nil)
 
       flash[:success] = t('.updated_success')
-      render 'success'
+      redirect_to '/access_requests/success'
     else
       render :edit
     end
+  end
+
+  def success
+    flash[:success] = t('.created_success')
   end
 
   private

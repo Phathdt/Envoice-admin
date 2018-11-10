@@ -84,10 +84,8 @@ ActiveRecord::Schema.define(version: 2018_11_10_164553) do
     t.string "invited_by_type"
     t.bigint "invited_by_id"
     t.integer "invitations_count", default: 0
-    t.bigint "company_id"
     t.boolean "blocked", default: false
     t.index ["blocked"], name: "index_users_on_blocked"
-    t.index ["company_id"], name: "index_users_on_company_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["invitation_token"], name: "index_users_on_invitation_token", unique: true
     t.index ["invitations_count"], name: "index_users_on_invitations_count"
@@ -98,5 +96,4 @@ ActiveRecord::Schema.define(version: 2018_11_10_164553) do
   end
 
   add_foreign_key "companies", "users"
-  add_foreign_key "users", "companies"
 end

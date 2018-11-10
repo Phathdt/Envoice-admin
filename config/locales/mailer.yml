@@ -1,0 +1,35 @@
+vi:
+  mailer:
+    access_request_mailer:
+      accept:
+        subject: Xác nhận
+        content: |
+          Thân gửi %{user_name},
+
+          Tài khoản của công ty %{company_name} đã được kiểm duyệt tại hệ thống Envoice.
+          Bạn có thể bắt đầu sử dụng các tính năng tại
+          %{link}
+          Xin cảm ơn
+      reject:
+        subject: Từ chối
+        content: |
+          Thân gửi %{user_name},
+          Tài khoản của công ty %{company_name} đã bị từ chối tại hệ thống Envoice.
+          Với lý do %{reason}
+          Bạn có thể đăng nhập và cập nhật các thông tin cần thiết tại
+          %{link}
+          Xin cảm ơn
+    invoice:
+      send_customer:
+        subject: Hóa đơn điện tử từ công ty %{company_name}
+        content: |
+          Chào quý khách,
+          Envoice gửi đến quý khách thông tin hóa đơn điện tử cho đơn hàng từ công ty %{company_name}.
+          Website tra cứu hoá đơn: %{check_url}
+          Mã tra cứu của quý khách: %{tx_id}
+
+          Thông tin hoá đơn đã được mã hoá và lưu trữ trên blockchain,
+
+          Tìm hiểu thêm %{info_url}
+
+          Quý khách nên lưu trữ những thông tin này để tra cứu khi cần.
