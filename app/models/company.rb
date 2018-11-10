@@ -7,7 +7,7 @@ class Company < ApplicationRecord
   has_one :account
 
   validates :name, presence: true
-  validates :public_address, presence: true, length: { is: 40 }
+  validates :public_address, presence: true, length: { is: 40 }, uniqueness: true
   validates :phone_number, length: { minimum: 10, maximum: 11 }, presence: true
   validates :tax_identification_number, presence: true
   validates :address, presence: true

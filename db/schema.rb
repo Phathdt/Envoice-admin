@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_10_164553) do
+ActiveRecord::Schema.define(version: 2018_11_10_173809) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,8 @@ ActiveRecord::Schema.define(version: 2018_11_10_164553) do
     t.integer "state", default: 0
     t.string "reason"
     t.string "public_address"
+    t.index ["email"], name: "index_access_requests_on_email", unique: true
+    t.index ["public_address"], name: "index_access_requests_on_public_address", unique: true
     t.index ["state"], name: "index_access_requests_on_state"
   end
 
@@ -63,6 +65,8 @@ ActiveRecord::Schema.define(version: 2018_11_10_164553) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "public_address"
+    t.index ["email"], name: "index_companies_on_email", unique: true
+    t.index ["public_address"], name: "index_companies_on_public_address", unique: true
     t.index ["user_id"], name: "index_companies_on_user_id"
   end
 
