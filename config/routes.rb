@@ -17,5 +17,18 @@ Rails.application.routes.draw do
         patch :reject, on: :member
       end
     end
+
+    namespace :api do
+      namespace :v1, defaults: {format: :json}  do
+        mount_devise_token_auth_for 'User',
+          at: '/auth',
+          skip: [:invitation, :password] ,
+          controllers: {
+            sessions:  'overrides/sessions',
+            token_validations: 'overrides/token_validations'
+          }
+
+      end
+    end
   end
 end

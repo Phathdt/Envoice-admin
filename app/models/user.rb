@@ -1,6 +1,11 @@
 class User < ApplicationRecord
-  devise :invitable, :database_authenticatable, :recoverable, :rememberable,
-          :validatable, :invitable, :async
+  devise  :invitable,
+          :database_authenticatable,
+          :recoverable,
+          :rememberable,
+          :validatable,
+          :async
+  include DeviseTokenAuth::Concerns::User
 
   enum role: { admin: 0, client: 1 }
 

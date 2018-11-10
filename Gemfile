@@ -17,10 +17,9 @@ gem 'slim-rails'
 gem 'uglifier', '>= 1.3.0'
 
 ## Authenicate
-gem 'devise'
+gem 'devise_token_auth'
 gem 'devise-async'
 gem 'devise_invitable', '~> 1.7.0'
-
 ## Nem core
 gem 'nem-ruby'
 
@@ -35,6 +34,7 @@ gem 'kaminari'
 gem 'rails-i18n'
 gem 'ransack'
 gem 'sidekiq'
+gem 'rack-cors', :require => 'rack/cors'
 
 group :development, :test do
   gem 'byebug'
