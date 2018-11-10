@@ -12,8 +12,3 @@ Sidekiq.configure_client do |config|
     url: SIKEKIQ_REDIS_URL
   }
 end
-
-if Rails.env.development?
-  require 'sidekiq/testing'
-  Sidekiq::Testing.inline!
-end

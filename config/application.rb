@@ -26,7 +26,6 @@ module Envoice
     config.i18n.default_locale = :vi
 
     config.eager_load_paths << Rails.root.join('lib', 'core_ext')
-    config.active_job.queue_adapter = :sidekiq
 
     config.generators.system_tests = nil
   end
