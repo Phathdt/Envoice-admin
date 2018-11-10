@@ -53,6 +53,7 @@ vi:
         tax_identification_number: Mã số thuế
         address: Địa chỉ
         email: Email
+        public_address: Địa chỉ blockchain
       product:
         name: Tên sản phẩm
         price: Giá sản phẩm
