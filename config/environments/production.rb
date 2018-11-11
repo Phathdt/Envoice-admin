@@ -94,6 +94,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # Mailer
+  config.action_mailer.default_url_options = { host: ENV['DOMAIN_NAME'] }
   config.action_mailer.default_options = { from: ENV['SMTP_LOGIN'] }
   config.action_mailer.default charset: 'utf-8'
   config.action_mailer.raise_delivery_errors = true
