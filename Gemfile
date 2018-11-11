@@ -35,6 +35,7 @@ gem 'rails-i18n'
 gem 'ransack'
 gem 'sidekiq'
 gem 'rack-cors', :require => 'rack/cors'
+gem 'mini_magick', '~> 4.8'
 
 group :development, :test do
   gem 'byebug'
