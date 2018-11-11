@@ -7,7 +7,7 @@ class User < ApplicationRecord
           :async
   include DeviseTokenAuth::Concerns::User
 
-  enum role: { admin: 0, client: 1 }
+  enum role: { client: 0, admin: 1 }
 
   has_one :company
 
