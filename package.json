@@ -28,7 +28,6 @@
   },
   "scripts": {
     "build": "yarn --cwd install",
-    "deploy": "cp -a client/build/. public/",
-    "heroku-postbuild": "yarn build && yarn deploy"
+    "heroku-postbuild": "yarn build"
   }
 }
