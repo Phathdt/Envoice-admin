@@ -1,0 +1,13 @@
+.row
+  .col-xl-8.mb-5.mb-xl-0
+    .card.bg-gradient-default.shadow
+      .card-header.bg-transparent
+        .row.align-items-center
+          .col
+            h2.text-white.mb-0 API KEY
+        .row
+          .col-md-6.col-sm-12
+            .form-group
+              = text_field_tag 'access-token', current_user.access_token , class: 'form-control', placeholder: "#{t('place_holder.company_name')}"
+          .col-md-6.col-sm-12
+              = button_to 'Reset', reset_customer_access_tokens_path, method: :patch, class: 'btn btn-icon btn-3 btn-primary'

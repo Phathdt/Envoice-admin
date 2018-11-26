@@ -18,6 +18,14 @@ Rails.application.routes.draw do
       end
     end
 
+    namespace :customer do
+      get '/', to: 'dashboards#index'
+      resources :dashboards, only: %i(index)
+      resources :access_tokens, only: %i(index) do
+        patch :reset, on: :collection
+      end
+    end
+
     namespace :api do
       namespace :v1, defaults: {format: :json}  do
         mount_devise_token_auth_for 'User',

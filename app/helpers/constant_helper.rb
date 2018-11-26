@@ -8,4 +8,12 @@ module ConstantHelper
   ACCESS_REQUEST = [
     ['access_requests', URL_HELPERS.admin_access_requests_path(locale: I18n.locale)]
   ].freeze
+
+  DASHBOARD = [
+    ['dashboard', URL_HELPERS.customer_path(locale: I18n.locale)]
+  ].freeze
+
+  API_KEY = [
+    ['api_key', URL_HELPERS.customer_access_tokens_path(locale: I18n.locale)]
+  ].freeze
 end

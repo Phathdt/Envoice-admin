@@ -28,3 +28,6 @@ nav#sidenav-main.navbar.navbar-vertical.fixed-left.navbar-expand-md.navbar-light
         - if current_user.admin?
           = render 'layouts/sidebar_header', model: 'dashboard', icon_name: 'ni ni-tv-2', collection: ConstantHelper::SIDEBAR_LANDING
           = render 'layouts/sidebar_header', model: 'access_request', icon_name: 'ni ni-user-run', collection: ConstantHelper::ACCESS_REQUEST
+        - else
+          = render 'layouts/sidebar_header', model: 'dashboard', icon_name: 'ni ni-tv-2', collection: ConstantHelper::DASHBOARD
+          = render 'layouts/sidebar_header', model: 'access_token', icon_name: 'ni ni-tv-2', collection: ConstantHelper::API_KEY

@@ -88,3 +88,6 @@ vi:
       title: Quản lý khách hàng
       list_customer: Danh sách khách hàng
       new_customer: Tạo khách hàng mới
+    access_tokens:
+      title: Quản lý API Key
+      api_key: Thông tin
