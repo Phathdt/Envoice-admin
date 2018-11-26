@@ -28,13 +28,7 @@ Rails.application.routes.draw do
 
     namespace :api do
       namespace :v1, defaults: {format: :json}  do
-        mount_devise_token_auth_for 'User',
-          at: '/auth',
-          skip: [:invitation, :password] ,
-          controllers: {
-            sessions:  'overrides/sessions',
-            token_validations: 'overrides/token_validations'
-          }
+        resource :invoices, only: %i(create)
 
       end
     end
