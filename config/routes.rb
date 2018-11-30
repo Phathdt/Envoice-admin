@@ -9,6 +9,10 @@ Rails.application.routes.draw do
     resources :access_requests, only: %i(new create edit update)
     get 'access_requests/success', to: 'access_requests#success'
 
+    resources :invoices, only: %i(index) do
+      post :search, on: :collection
+    end
+
     namespace :admin do
       get '/', to: 'dashboards#index'
       resources :dashboards, only: %i(index)
@@ -24,6 +28,7 @@ Rails.application.routes.draw do
       resources :access_tokens, only: %i(index) do
         patch :reset, on: :collection
       end
+      resources :invoices, only: %i(index show)
     end
 
     namespace :api do

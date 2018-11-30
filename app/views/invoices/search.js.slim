@@ -1,0 +1,8 @@
+- if @invoice.present?
+  | $('#invoice-modal .modal-content').html('');
+  | $('#invoice-modal .modal-content').append("#{j render('show')}");
+  | $('#invoice-modal').modal('show')
+- else
+  | $('#invoice-modal .modal-content').html('');
+  | $('#invoice-modal .modal-content').append("#{j render('nothing')}");
+  | $('#invoice-modal').modal('show')

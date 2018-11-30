@@ -1,0 +1,7 @@
+.invoice-box.card
+  = image_tag @invoice.image, class: 'image-full-width', id: 'print-this'
+.invoice-box.card
+  .row
+    h1 = "Tình trạng khai báo: #{@invoice.state}"
+  .row
+    h1 = "Tinh trang valid: #{@invoice.nem_validate}"
