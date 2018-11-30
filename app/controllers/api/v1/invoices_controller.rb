@@ -10,7 +10,7 @@ class Api::V1::InvoicesController < Api::V1::BaseApiController
   private
 
   def invoice_params
-    params.require(:invoice).permit(:token)
+    params.require(:invoice).permit(:form_identifier, :serial_number, :invoice_number,:invoice_date, :payment_method, :vat_percent, :transaction_id, :hash_data, :pdf, :image)
   end
 
   def invoice_service

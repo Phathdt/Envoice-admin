@@ -1,10 +1,6 @@
 class Company < ApplicationRecord
-  belongs_to :owner, class_name: 'User', foreign_key: 'user_id'
-  has_many :staffs, class_name: 'User', foreign_key: 'company_id'
-  has_many :products, dependent: :destroy
+  belongs_to :user
   has_many :invoices, dependent: :destroy
-  has_many :customers, dependent: :destroy
-  has_one :account
 
   validates :name, presence: true
   validates :public_address, presence: true, length: { is: 40 }, uniqueness: true
