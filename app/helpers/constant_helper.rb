@@ -16,4 +16,8 @@ module ConstantHelper
   API_KEY = [
     ['api_key', URL_HELPERS.customer_access_tokens_path(locale: I18n.locale)]
   ].freeze
+
+  INVOICES = [
+    ['invoice', URL_HELPERS.customer_invoices_path(locale: I18n.locale)]
+  ].freeze
 end
