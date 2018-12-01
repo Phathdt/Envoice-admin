@@ -42,6 +42,7 @@
               th scope="col" = t('.invoice_number')
               th scope="col" = t('.invoice_date')
               th scope="col" = t('.state')
+              th scope="col" = t('.nem_validate')
               th scope="col" = t('.show')
           tbody
             - @invoices.each do |invoice|
@@ -56,6 +57,8 @@
                   = invoice.invoice_date
                 td
                   = enum_l(invoice, :state)
+                td
+                  = enum_l(invoice, :nem_validate)
                 td
                   = link_to t('.show'), [:customer, invoice], remote: true
 

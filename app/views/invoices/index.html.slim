@@ -1,10 +1,10 @@
 = form_for [:search, Invoice.new ], remote: true do |f|
   .form-group
     label.form-control-label = t('place_holder.serial_number')
-    = f.text_field :transaction_id, class: 'form-control', placeholder: "#{t('place_holder.serial_number')}"
+    = f.text_field :transaction_id, class: 'form-control', placeholder: "#{t('place_holder.serial_number')}", required: true
   .row
     .col-md-4.mx-auto
-      = f.submit 'ok', class: 'btn btn-primary btn-lg my-4 btn-full'
+      = f.submit t('.search'), class: 'btn btn-primary btn-lg my-4 btn-full'
 
 
 #invoice-modal.modal.fade tabindex="-1"

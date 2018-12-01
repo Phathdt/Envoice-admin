@@ -107,6 +107,7 @@ vi:
         customer_tax_identification_number: Má số thuế
         customer_name: Tên khách hàng
         state: Trạng thái
+        nem_validate: Nem validate
         edit: Sửa
         delete: Xóa
         show: Xem

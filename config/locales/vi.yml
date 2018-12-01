@@ -44,6 +44,9 @@ vi:
     invoice_date: Ngày tạo lập
     company_name: Tên công ty
     tax_number: Mã số thuế
+  invoices:
+    index:
+      search: Tìm kiếm
   activerecord:
     attributes:
       access_request:
@@ -63,9 +66,13 @@ vi:
     enums:
       invoice:
         states:
-          pending: Đang chờ xử lí
+          processing: Đang chờ xử lí
           suspended: Đã hủy
           approved: Đã phát thành
+        nem_validates:
+          pending: Đang chờ xử lí
+          validated: Hợp lệ
+          not_validated: Không hợp lệ
   nav:
     dashboards:
       title: Quản lý tổng hợp
