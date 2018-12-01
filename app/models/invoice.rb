@@ -7,4 +7,11 @@ class Invoice < ApplicationRecord
   has_one_attached :image
   has_one_attached :pdf
 
+  after_create :check_nem_validate
+
+  private
+
+  def check_nem_validate
+    CheckValidateInvoiceJob.set(wait: DELAY_NEM_UPBLOCK.seconds).perform_later(self)
+  end
 end
