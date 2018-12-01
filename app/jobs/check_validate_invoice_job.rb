@@ -8,12 +8,12 @@ class CheckValidateInvoiceJob < ApplicationJob
     transaction = endpoint.find(Invoice.last.transaction_id)
 
     message = transaction.message.value
-
     decode_message = message.scan(/../).map { |x| x.hex.chr }.join
-
     encode_data = Digest::SHA2.new(256).hexdigest invoice.hash_data
 
-    decode_message == encode_data ? invoice.validated! : invoice.not_validated
+    account_endpoint = Nem::Endpoint::Account.new(node)
+    account_nem = account_endpoint.find(invoice.company.public_address)
 
+    (decode_message == encode_data) && ( account_nem.public_key == transaction.signer) ? invoice.validated! : invoice.not_validated
   end
 end
