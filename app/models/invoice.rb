@@ -12,6 +12,6 @@ class Invoice < ApplicationRecord
   private
 
   def check_nem_validate
-    CheckValidateInvoiceJob.set(wait: DELAY_NEM_UPBLOCK.seconds).perform_later(self)
+    CheckValidateInvoiceJob.set(wait: 600.seconds).perform_later(self)
   end
 end
