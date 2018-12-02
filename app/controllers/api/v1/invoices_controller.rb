@@ -6,6 +6,11 @@ class Api::V1::InvoicesController < Api::V1::BaseApiController
     render json: data
   end
 
+  def cancle
+    data = invoice_service.cancle params[:id]
+
+    render json: data
+  end
 
   private
 

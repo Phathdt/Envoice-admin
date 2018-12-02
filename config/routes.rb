@@ -33,8 +33,9 @@ Rails.application.routes.draw do
 
     namespace :api do
       namespace :v1, defaults: {format: :json}  do
-        resource :invoices, only: %i(create)
-
+        resource :invoices, only: %i(create) do
+          patch :cancle, on: :collection
+        end
       end
     end
   end
