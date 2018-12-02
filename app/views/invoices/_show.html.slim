@@ -3,6 +3,6 @@
     embed src="#{url_for @invoice.pdf}" type="application/pdf"
 .invoice-box.card
   .row
-    h1 = "Tình trạng khai báo: #{@invoice.state}"
+    h1 = "Tình trạng khai báo: #{enum_l(@invoice, :state)}"
   .row
-    h1 = "Tinh trang valid: #{@invoice.nem_validate}"
+    h1 = "Xác thực trên BLOCKCHAIN: #{enum_l(@invoice, :nem_validate)}"
