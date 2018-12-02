@@ -51,5 +51,5 @@
                 td
                   = company.invoices_suspended.size
                 td
-                  = link_to t('.detail'), invoices_admin_company_path(company)
+                  = link_to t('.detail'), index_admin_company_invoices_path(company)
       = paginate @companies

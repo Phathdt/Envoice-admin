@@ -83,6 +83,7 @@ vi:
       title: "Công ty"
       company_info: "Thông tin Công ty"
       manage_user: "Quảng lý người dùng"
+      list_company: Danh sách công ty
     products:
       title: "Quản lý sản phẩm"
       list_product: "Danh mục sản phẩm"
