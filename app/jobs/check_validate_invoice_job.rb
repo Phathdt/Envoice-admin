@@ -14,6 +14,6 @@ class CheckValidateInvoiceJob < ApplicationJob
     account_endpoint = Nem::Endpoint::Account.new(node)
     account_nem = account_endpoint.find(invoice.company.public_address)
 
-    (decode_message == encode_data) && ( account_nem.public_key == transaction.signer) ? invoice.validated! : invoice.not_validated
+    (decode_message == encode_data) && ( account_nem.public_key == transaction.signer) ? invoice.validated! : invoice.not_validated!
   end
 end
