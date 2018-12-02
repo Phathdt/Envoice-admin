@@ -5,7 +5,7 @@ class CheckValidateInvoiceJob < ApplicationJob
     node = Nem::Node.new(host: ENV['NEM_HOST'])
     endpoint = Nem::Endpoint::Transaction.new(node)
 
-    transaction = endpoint.find(Invoice.last.transaction_id)
+    transaction = endpoint.find(invoice.transaction_id)
 
     message = transaction.message.value
     decode_message = message.scan(/../).map { |x| x.hex.chr }.join
