@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_30_170528) do
+ActiveRecord::Schema.define(version: 2018_12_02_102525) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -84,6 +84,7 @@ ActiveRecord::Schema.define(version: 2018_11_30_170528) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "nem_validate", default: 0
+    t.string "customer_name"
     t.index ["company_id"], name: "index_invoices_on_company_id"
     t.index ["nem_validate"], name: "index_invoices_on_nem_validate"
     t.index ["state"], name: "index_invoices_on_state"
