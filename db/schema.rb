@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_02_102525) do
+ActiveRecord::Schema.define(version: 2018_12_02_102636) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -85,6 +85,7 @@ ActiveRecord::Schema.define(version: 2018_12_02_102525) do
     t.datetime "updated_at", null: false
     t.integer "nem_validate", default: 0
     t.string "customer_name"
+    t.decimal "paid_amount", default: "0.0"
     t.index ["company_id"], name: "index_invoices_on_company_id"
     t.index ["nem_validate"], name: "index_invoices_on_nem_validate"
     t.index ["state"], name: "index_invoices_on_state"
