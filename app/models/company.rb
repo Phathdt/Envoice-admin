@@ -1,6 +1,7 @@
 class Company < ApplicationRecord
   belongs_to :user
   has_many :invoices, dependent: :destroy
+  has_many :invoices_suspended, -> { where(state: 'suspended')}, class_name: 'Invoice'
 
   validates :name, presence: true
   validates :public_address, presence: true, length: { is: 40 }, uniqueness: true

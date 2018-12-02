@@ -1,0 +1,69 @@
+.row
+  .col
+    .card.shadow
+      .card-body.px-lg-5.py-lg-5
+        h1 = t('.search_invoices')
+        = search_form_for @search, url: index_admin_company_invoices_path(@company), class: 'full-width' do |f|
+          .row
+            .col-md-6.col-sm-12
+              .form-group
+                label.form-control-label = t('.from_date')
+                = f.date_field :invoice_date_gteq, class: 'form-control'
+              .form-group
+                label.form-control-label = t('.to_date')
+                = f.date_field :invoice_date_lteq, class: 'form-control'
+            .col-md-6.col-sm-12
+              .form-group
+                label.form-control-label = t('.state')
+                = f.select :state_eq, enum_options_for_select(Invoice, :state), include_blank: true
+
+            .col-md-2.col-sm-12
+              button.btn.btn-icon.btn-2.btn-primary type="submit"
+                span.btn-inner--icon
+                  i.fas.fa-search
+
+.row
+  .col
+    .card.shadow
+      .card-header.border-0
+        h3.mb-0 = t('.title')
+      .table-responsive
+        table.table.align-items-center.table-flush
+          thead.thead-light
+            tr
+              th scope="col" = t('.stt')
+              th scope="col" = t('.form_identifier')
+              th scope="col" = t('.serial_number')
+              th scope="col" = t('.invoice_number')
+              th scope="col" = t('.name_customer')
+              th scope="col" = t('.invoice_date')
+              th scope="col" = t('.paid_amount')
+              th scope="col" = t('.state')
+              th scope="col" = t('.action')
+          tbody
+            - @invoices.each do |invoice|
+              tr
+                td
+                  = invoice.id
+                td
+                  = invoice.form_identifier
+                td
+                  = invoice.serial_number
+                td
+                  = invoice.invoice_number
+                td
+                  = invoice.customer_name
+                td
+                  = invoice.invoice_date
+                td
+                  = invoice.paid_amount
+                td
+                  = enum_l(invoice, :state)
+                td
+                  = link_to t('.detail'), admin_company_invoice_path(@company, invoice), remote: true
+
+      = paginate @invoices
+
+#invoice-modal.modal.fade tabindex="-1"
+  .modal-dialog.modal-dialog-centered.modal-lg role="document"
+    .modal-content

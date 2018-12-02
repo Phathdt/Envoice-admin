@@ -20,6 +20,13 @@ Rails.application.routes.draw do
         post :accept, on: :member
         patch :reject, on: :member
       end
+      get '/company_invoices', to: 'invoices#by_companies'
+      resources :companies, only: %i() do
+        resources :invoices, only: %i(show) do
+          get '/', to: 'invoices#index', on: :collection, as: 'index'
+        end
+
+      end
     end
 
     namespace :customer do

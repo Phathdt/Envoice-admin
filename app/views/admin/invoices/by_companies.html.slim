@@ -1,0 +1,55 @@
+.row
+  .col
+    .card.shadow
+      .card-body.px-lg-5.py-lg-5
+        h1 = t('.search_companies')
+        = search_form_for @search, url: admin_company_invoices_path, class: 'full-width' do |f|
+          .row
+            .col-md-6.col-sm-12
+              .form-group
+                label.form-control-label = t('.company_name')
+                = f.text_field :name_cont, class: 'form-control'
+            .col-md-6.col-sm-12
+              .form-group
+                label.form-control-label = t('.tax_identification_number')
+                = f.text_field :tax_identification_number_cont, class: 'form-control'
+
+            .col-md-2.col-sm-12
+              button.btn.btn-icon.btn-2.btn-primary type="submit"
+                span.btn-inner--icon
+                  i.fas.fa-search
+
+.row
+  .col
+    .card.shadow
+      .card-header.border-0
+        h3.mb-0 = t('.title')
+      .table-responsive
+        table.table.align-items-center.table-flush
+          thead.thead-light
+            tr
+              th scope="col" = t('.id')
+              th scope="col" = t('.company_name')
+              th scope="col" = t('.tax_identification_number')
+              th scope="col" = t('.legal_representative')
+              th scope="col" = t('.total_invoice')
+              th scope="col" = t('.cancle_invoice')
+              th scope="col" = t('.action')
+          tbody
+            - @companies.each do |company|
+              tr
+                td
+                  = company.id
+                td
+                  = company.name
+                td
+                  = company.tax_identification_number
+                td
+                  = company.legal_representative
+                td
+                  = company.invoices.size
+                td
+                  = company.invoices_suspended.size
+                td
+                  = link_to t('.detail'), invoices_admin_company_path(company)
+      = paginate @companies

@@ -21,3 +21,30 @@ vi:
         accept: Hóa đơn đã được phê duyệt
       reject:
         reject: Hóa đơn đã bị từ chôi
+    invoices:
+      by_companies:
+        company_name: Tên công ty
+        id: ID
+        tax_identification_number: MST
+        legal_representative: Người đại diện
+        total_invoice: Tổng hóa đơn
+        cancle_invoice: Số hóa đơn hủy
+        action: Hành động
+        search_companies: Tìm công ty
+        detail: Xem
+      index:
+        search_invoices: Tìm kiếm hóa đơn
+        from_date: Từ ngày
+        to_date: Đến ngày
+        state: Trạng thái
+        title: Danh sách Hóa đơn
+        stt: STT
+        form_identifier: Mẫu số
+        serial_number: Ký hiệu
+        invoice_number: Số hóa đơn
+        name_customer: Tên khách hàng
+        invoice_date: Ngày hóa đơn
+        paid_amount: Tổng tiền
+        state: Trạng thái
+        action: Hành động
+        detail: Xem
