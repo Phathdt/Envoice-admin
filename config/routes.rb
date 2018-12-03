@@ -14,8 +14,7 @@ Rails.application.routes.draw do
     end
 
     namespace :admin do
-      get '/', to: 'dashboards#index'
-      resources :dashboards, only: %i(index)
+      get '/', to: 'access_requests#index'
       resources :access_requests, only: %i(index show edit update) do
         post :accept, on: :member
         patch :reject, on: :member
