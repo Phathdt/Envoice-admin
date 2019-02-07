@@ -1,12 +1,12 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.5.1'
+ruby '2.5.3'
 
 ## Base libs
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
-gem 'rails', '~> 5.2.1'
+gem 'rails', '~> 5.2.2'
 
 ## Fronend
 gem 'bootstrap-toggle-rails'
@@ -20,6 +20,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'devise_token_auth'
 gem 'devise-async'
 gem 'devise_invitable', '~> 1.7.0'
+
 ## Nem core
 gem 'nem-ruby'
 
@@ -36,6 +37,7 @@ gem 'ransack'
 gem 'sidekiq'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'mini_magick', '~> 4.8'
+gem 'rb-readline'
 
 group :development, :test do
   gem 'byebug'
