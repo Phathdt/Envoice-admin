@@ -18,5 +18,6 @@
 //= require js-routes
 //= require rails-ujs
 //= require activestorage
+//= require rails.validations
 //= require_self
 //= require_tree .

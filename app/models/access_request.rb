@@ -25,7 +25,13 @@ class AccessRequest < ApplicationRecord
   has_one_attached :id_legal_representative_front
   has_one_attached :id_legal_representative_back
 
+  validates_file :business_registration_certificate
+  validates_file :certificate_of_tax_registration
+  validates_file :id_legal_representative_front
+  validates_file :id_legal_representative_back
+
   validates :company_name, presence: true
+  validates :legal_representative, presence: true
   validates :public_address, presence: true, length: { is: 40 }, uniqueness: true
   validates :phone_number, length: { minimum: 10, maximum: 11 }, presence: true
   validates :tax_identification_number, presence: true

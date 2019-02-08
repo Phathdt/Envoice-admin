@@ -57,6 +57,10 @@ vi:
         address: Địa chỉ
         email: Email
         public_address: Địa chỉ blockchain
+        business_registration_certificate: Giấy chứng nhận đăng ký  kinh doanh
+        certificate_of_tax_registration: Giấy chứng nhận đăng ký thuế
+        id_legal_representative_front: CMND người đại diện pháp luật (mặt trước)
+        id_legal_representative_back: CMND người đại diện pháp luật (mặt sau)
       product:
         name: Tên sản phẩm
         price: Giá sản phẩm
@@ -72,6 +76,9 @@ vi:
           pending: Đang chờ xử lí
           validated: Hợp lệ
           not_validated: Không hợp lệ
+    errors:
+      messages:
+        attached: chưa đính kèm
   nav:
     dashboards:
       title: Quản lý tổng hợp

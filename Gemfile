@@ -15,6 +15,7 @@ gem 'font-awesome-sass', '~> 5.2.0'
 gem 'sass-rails', '~> 5.0'
 gem 'slim-rails'
 gem 'uglifier', '>= 1.3.0'
+gem 'client_side_validations'
 
 ## Authenicate
 gem 'devise_token_auth'
