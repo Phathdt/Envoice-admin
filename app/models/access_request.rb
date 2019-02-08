@@ -36,7 +36,7 @@ class AccessRequest < ApplicationRecord
   validates :phone_number, length: { minimum: 10, maximum: 11 }, presence: true
   validates :tax_identification_number, presence: true
   validates :address, presence: true
-  validates :email, presence: true, format: { with: URI::MailTo::EMAIL_REGEXP }
+  validates :email, presence: true, format: { with: URI::MailTo::EMAIL_REGEXP }, uniqueness: true
 
   def image_present?
     self.business_registration_certificate.attached? &&
