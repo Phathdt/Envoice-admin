@@ -1,0 +1,33 @@
+.col-md-6.col-sm-12
+  .image_display
+    = link_to image_path('errors.jpg'), class: 'fancy-box-link', data: {fancybox: "gallery", caption: t('place_holder.business_registration_certificate') } do
+      = image_tag 'errors.jpg', class: 'image-full-width fancy-box-image'
+
+    .file.btn.btn-lg.btn-primary.btn-upload.btn-full
+      = t('place_holder.business_registration_certificate')
+      = f.file_field :business_registration_certificate, class: 'file-upload', accept:'image/*'
+
+  .image_display
+    = link_to image_path('errors.jpg'), class: 'fancy-box-link', data: {fancybox: "gallery", caption: t('place_holder.certificate_of_tax_registration') } do
+      = image_tag 'errors.jpg', class: 'image-full-width fancy-box-image'
+
+    .file.btn.btn-lg.btn-primary.btn-upload.btn-full
+      = t('place_holder.certificate_of_tax_registration')
+      = f.file_field :certificate_of_tax_registration, class: 'file-upload', accept:'image/*'
+
+.col-md-6.col-sm-12
+  .image_display
+    = link_to image_path('errors.jpg'), class: 'fancy-box-link', data: {fancybox: "gallery", caption: t('place_holder.id_legal_representative_front') } do
+      = image_tag 'errors.jpg', class: 'image-full-width fancy-box-image'
+
+    .file.btn.btn-lg.btn-primary.btn-upload.btn-full
+      = t('place_holder.id_legal_representative_front')
+      = f.file_field :id_legal_representative_front, class: 'file-upload', accept:'image/*'
+
+  .image_display
+    = link_to image_path('errors.jpg'), class: 'fancy-box-link', data: {fancybox: "gallery", caption: t('place_holder.id_legal_representative_back') } do
+      = image_tag 'errors.jpg', class: 'image-full-width fancy-box-image'
+
+    .file.btn.btn-lg.btn-primary.btn-upload.btn-full
+      = t('place_holder.id_legal_representative_back')
+      = f.file_field :id_legal_representative_back, class: 'file-upload', accept:'image/*'
