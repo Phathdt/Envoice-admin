@@ -32,6 +32,13 @@ class AccessRequest < ApplicationRecord
   validates :address, presence: true
   validates :email, presence: true, format: { with: URI::MailTo::EMAIL_REGEXP }
 
+  def image_present?
+    self.business_registration_certificate.attached? &&
+      self.certificate_of_tax_registration.attached? &&
+      self.id_legal_representative_front.attached? &&
+      self.id_legal_representative_back.attached?
+  end
+
   class << self
     def generate_token
       loop do
