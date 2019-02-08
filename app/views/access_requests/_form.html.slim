@@ -27,7 +27,7 @@
 
   h2 = t('.certification')
   .row
-    - if @access_request.persisted?
+    - if @access_request.persisted? || @access_request.image_present?
       = render 'persisted', access_request: @access_request, f: f
     - else
       = render 'not_persisted', access_request: @access_request, f: f
@@ -40,3 +40,6 @@
   .row
     .mx-auto
       h4= link_to t('.had_password_sign_in'), new_user_session_path
+
+javascript:
+  new AccessRequestForm
