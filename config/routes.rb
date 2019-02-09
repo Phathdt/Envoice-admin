@@ -29,8 +29,7 @@ Rails.application.routes.draw do
     end
 
     namespace :customer do
-      get '/', to: 'dashboards#index'
-      resources :dashboards, only: %i(index)
+      get '/', to: 'invoices#index'
       resources :access_tokens, only: %i(index) do
         patch :reset, on: :collection
       end
